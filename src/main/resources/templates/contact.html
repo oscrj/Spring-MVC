@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+    <div id="wrapper">
+        <form th:action="@{contact}" method="post">
+            <input type="text" id="input" name="input" value="input" placeholder="Input">
+            <button>Send</button>
+        </form>
+    </div>
+    <div style="margin-left: 500px;">
+        <ul style="list-style-type: none; display: block;">
+            <li th:each="input: ${inputs}">
+                <p th:text="${input}"></p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
