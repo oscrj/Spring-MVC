@@ -1,14 +1,55 @@
 *{
-    background: gray;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#nav-wrapper{
+    display: flex;
+    justify-content: end;
+    border-bottom: 1px solid grey;
+}
+
+#nav-wrapper li{
+    display: inline-flex;
+    list-style: none;
+    margin-right: 25px;
+}
+
+#nav-wrapper a{
+    margin: 10px 10px;
+    text-decoration: none;
+    color: black;
 }
 
 #wrapper{
     display: flex;
     align-content: center;
-    justify-content: center
+    justify-content: center;
 }
 
- #input{
+#wrapper-form{
+    display: block;
+    margin-top: 50px;
+}
 
- }
+input{
+    margin: 5px 0;
+}
 
+#list-wrapper{
+    margin-top: 50px;
+}
+
+#list-wrapper h2{
+    font-weight: normal;
+}
+
+#list-wrapper ul{
+ list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+#list-wrapper li{
+    margin: 10px 0;
+}

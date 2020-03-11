@@ -15,33 +15,46 @@ public class Home {
 
     List<String> inputList = new ArrayList<>();
 
-    @GetMapping("index")
+    //-------------------------- Exercise 1 --------------------------
+
+    @GetMapping("/index")
     public String index(){
         return null;
     }
 
-    @GetMapping("contact")
+    //-------------------------- Exercise 2 --------------------------
+
+    @GetMapping("/contact")
     public String contact(){
         return "contact";
     }
 
-    @PostMapping("contact")
-    public String contact(@RequestParam()String input){
+    //  receive inputs from user and add it ti inputList.
+    @PostMapping("/contact")
+    public String contact(@RequestParam(value = "input")String input){
         if(!input.isEmpty()){
             inputList.add(input);
         }
-        return "redirect:contact-list";
+        return "redirect:contact";
     }
 
-    @GetMapping("contact-list")
+    //  Show inputList on contact-view
+    @GetMapping("/contact-list") //  url to show the list of inputList
     public String contactList(Model model){
         model.addAttribute("inputs", inputList);
-        return "contact";
+        return "contact-view";
     }
 
-    @GetMapping("about")
+    //-------------------------- Exercise 3 --------------------------
+
+    @GetMapping("/about")
     public String about(Model model){
         model.addAttribute("image", "img/springBoot.jpeg");
         return "about";
     }
+
+    //-------------------------- Exercise 4 --------------------------
+
+
+
 }
