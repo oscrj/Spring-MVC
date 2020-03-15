@@ -19,7 +19,7 @@ public class Home {
 
     @GetMapping("/index")
     public String index(){
-        return null;
+        return "redirect:index";
     }
 
     //-------------------------- Exercise 2 --------------------------
@@ -53,8 +53,8 @@ public class Home {
         return "about";
     }
 
-    //-------------------------- Exercise 4 --------------------------
-
-
+    /*-------------------------- Exercise 4 --------------------------
+        See Fever Controller.
+     */
 
 }

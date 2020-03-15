@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hypothermia</title>
+    <link rel="stylesheet" href="CSS/fever.css">
+</head>
+<body>
+    <header id="nav-wrapper">
+        <a th:href="@{/temp}">Back</a>
+    </header>
+    <div class="wrapper">
+        <div id="img-wrapper">
+            <img id="img" th:src="${image}" alt="Hypothermia">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="info">
+            <h3 th:text="${information}"></h3>
+            <ul>
+                <li th:text="${info}"></li>
+                <li th:text="${info2}"></li>
+                <li th:text="${info3}"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

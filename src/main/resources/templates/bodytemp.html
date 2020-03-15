@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter your body temperature</title>
+    <link rel="stylesheet" href="CSS/fever.css">
+</head>
+<body>
+    <header id="nav-wrapper">
+        <a th:href="@{/temp}">Body Temperature Input</a>
+    </header>
+    <div class="wrapper">
+        <div>
+            <img id="img-temp" th:src="${image}" alt="Thermometer">
+        </div>
+        <div id="input-wrapper">
+            <form th:action="@{temp}" method="post">
+                <label for="bodyTemp">Enter your body temperature:</label><br>
+                <input type="number" step="0.01" id="bodyTemp" name="bodyTemp" required>
+                <input id="submit-btn" type="submit" value="Send"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
