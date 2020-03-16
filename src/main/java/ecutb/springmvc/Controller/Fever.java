@@ -17,7 +17,17 @@ public class Fever {
 
     @PostMapping("/temp")
     public String temp(@RequestParam(name = "bodyTemp", defaultValue = "0.0") Double bodyTemp, Model model){
-        if(bodyTemp <= 35){
+
+        if(bodyTemp <= 28){
+            model.addAttribute("image", "img/Hypothermia.png");
+            model.addAttribute("information", "Your body temperature are " + bodyTemp +"!");
+            model.addAttribute("info", "You are probably unconscious and cant read this...");
+            model.addAttribute("info2","Most likely you will die!");
+            model.addAttribute("info3","Bye..");
+            return "hypothermia";
+        }
+
+        if(bodyTemp <= 35 && bodyTemp > 28){
             model.addAttribute("image", "img/Hypothermia.png");
             model.addAttribute("information", "Your body temperature are " + bodyTemp +"!");
             model.addAttribute("info", "Remove wet clothes");
@@ -33,7 +43,7 @@ public class Fever {
             return "normal";
         }
 
-        if(bodyTemp >= 37.5){
+        if(bodyTemp >= 37.5 && bodyTemp <= 42){
             model.addAttribute("image","img/FeverBrain.png");
             model.addAttribute("information","Your body temperature are " + bodyTemp +"!");
             model.addAttribute("info","Go to bed and sleep it of");
@@ -42,6 +52,18 @@ public class Fever {
             model.addAttribute("info4","Enjoy a bowl of Ice cream");
             return "fever";
         }
+
+        if(bodyTemp > 42){
+            model.addAttribute("image","img/FeverBrain.png");
+            model.addAttribute("information","Your body temperature are " + bodyTemp +"!");
+            model.addAttribute("info","This high body temperature is deadly");
+            model.addAttribute("info2","You are probably unconscious");
+            model.addAttribute("info3","If you are a male, DO worry!! You are going to die!");
+            model.addAttribute("info4","Bye..");
+            return "fever";
+        }
+
+
         return "redirect:bodytemp";
     }
 
